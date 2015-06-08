@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Plant do 
 
   it 'must have a name' do
-    Plant = Plant.new
+    plant = Plant.new
     expect(plant.valid?).to eq false
   end
 
