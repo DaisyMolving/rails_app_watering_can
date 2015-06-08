@@ -7,13 +7,15 @@ describe Plant do
     expect(plant.valid?).to eq false
   end
 
-  # it 'must have a category' do
+  it 'must have a category' do
+    plant = Plant.new(name: "Money Plant")
+    expect(plant.valid?).to eq false
+  end
 
-  # end
-
-  # it 'must have an amount of water required per week' do
-
-  # end
+  it 'must have an amount of water required per week' do
+    plant = Plant.new(name: "Money Plant", category: "Succulent")
+    expect(plant.valid?).to eq false
+  end
 
 
 end
