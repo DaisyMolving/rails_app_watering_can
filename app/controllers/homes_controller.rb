@@ -22,7 +22,19 @@ class HomesController < ApplicationController
     redirect_to(homes_path)
   end
 
-  
+    # GET
+  def edit
+    @home = Home.find(params[:id])
+  end
+
+    # PUT
+  def update
+    @home = Home.find(params[:id])
+    @home.update(home_params)
+    redirect_to(homes_path)
+  end
+
+
 
 private
   def home_params
