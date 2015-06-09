@@ -1,7 +1,12 @@
 <h1>this is the index page</h1>
 
-<% @homes.each do | home | %>
-  <%= home.name %>
+<%= link_to 'Add a home', new_home_path %>
+
+
+  <% @homes.each do | home | %>
+    <div class="list-group-item">
+      <ul class="home">
+        <li class="home_name"><%= link_to(home.name, homes_path(home.id))%></li>  
+    </div>
   <% end %>
 
-   <% binding.pry %>
