@@ -14,10 +14,12 @@ class HomesController < ApplicationController
   # GET
   def new
     @home = Home.new
+    @plants = Plant.all
   end
 
   # POST 
   def create
+    params[:home][:rain_predicted] = 1
     Home.create(home_params)
     redirect_to(homes_path)
   end
@@ -33,6 +35,15 @@ class HomesController < ApplicationController
     @home.update(home_params)
     redirect_to(homes_path)
   end
+
+
+   # DELETE
+  def destroy
+    home = Home.find(params[:id])
+    home.destroy
+    redirect_to(homes_path)
+  end
+
 
 
 

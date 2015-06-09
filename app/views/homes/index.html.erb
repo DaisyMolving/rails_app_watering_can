@@ -6,7 +6,8 @@
   <% @homes.each do | home | %>
     <div class="list-group-item">
       <ul class="home">
-        <li class="home_name"><%= link_to(home.name, homes_path(home.id))%></li> 
+        <li class="home_name"><%= link_to(home.name, home_path(home))%></li> 
+
         <li><%= link_to('EDIT', edit_home_path(home.id)) %></li> 
         <li><%= link_to('DELETE', home_path(home.id), method: :delete) %></li>
     </div>
