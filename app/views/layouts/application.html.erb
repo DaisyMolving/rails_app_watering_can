@@ -6,7 +6,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= params[:action]%>">
+
+<nav>
+  <li><%= link_to('ALL HOMES', root_path, class: 'nav-link')%></li>
+
+</nav>
 
 <%= yield %>
 

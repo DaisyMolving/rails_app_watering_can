@@ -45,9 +45,8 @@ class HomesController < ApplicationController
     redirect_to(homes_path)
   end
 
-
-
-
+ 
+ 
 private
   def home_params
     params.require(:home).permit(:name, :rain_predicted, {plant_ids: []})
