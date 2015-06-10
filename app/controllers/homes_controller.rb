@@ -9,6 +9,7 @@ class HomesController < ApplicationController
   # this is a GET
   def show
     @home = Home.find(params[:id])
+    @plant = Plant.find(params[:id])
   end
 
   # GET
@@ -49,7 +50,8 @@ class HomesController < ApplicationController
 
 private
   def home_params
-    params.require(:home).permit(:name, :rain_predicted)
+    params.require(:home).permit(:name, :rain_predicted, {plant_ids: []})
   end
+
 
 end

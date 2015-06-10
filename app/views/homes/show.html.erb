@@ -1,3 +1,12 @@
-<h1>this is the show page<h2>
+<h1>My Home</h1>
 
-<%= @home.plants %>
+<h2><%=Home.name%></h2>
+
+
+<% @home.plants.each do | plant | %>
+    <div class="list-plants">
+      <ul class="plants-chosen">
+        <li class="plant_name"><%= link_to(plant.name, plant_path(plant))%></li> 
+      </ul>
+    </div>
+  <% end %>
