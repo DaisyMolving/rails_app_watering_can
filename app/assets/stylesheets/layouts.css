@@ -1,0 +1,31 @@
+
+
+body {
+  margin: 0 auto;
+  font-family: Helvetica;
+}
+
+head {
+  margin: 0 auto;
+  padding: none;
+}
+
+nav {
+  text-align: center;
+  background-color: rgba(76, 168, 0, 0.5)
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nav-bar {
+  padding: 30px;
+  text-decoration: none;
+}
+
+h1 {
+  color: rgb(76, 168, 0);
+  text-align: center;
+}
