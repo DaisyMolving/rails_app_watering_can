@@ -6,7 +6,10 @@
 <% @home.plants.each do | plant | %>
     <div class="list-plants">
       <ul class="plants-chosen">
-        <li class="plant_name"><%= link_to(plant.name, plant_path(plant))%></li> 
+        <li class="plant_name"><%= link_to(plant.name, plant_path(plant))%>
+        </li> 
+        <li>Is it outside? <%= check_box_tag "outside?", plant.outside = true %></li>
+        <li><%= link_to('Remove From My Home', plant_path(plant.id), method: :delete) %></li>
       </ul>
     </div>
   <% end %>
