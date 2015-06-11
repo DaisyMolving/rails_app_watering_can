@@ -29,6 +29,7 @@ class HomesController < ApplicationController
   def edit
     @home = Home.find(params[:id])
     @plants = Plant.all
+    @selected = @home.plants
   end
 
     # PUT

@@ -26,9 +26,6 @@
 <% end %>
 
 
+<%= link_to('Want to Add More Plants?', edit_home_path(@home.id)) %>
 
-<% @homes.each do | home | %>
 
-  <%= link_to('Want to Add More Plants?', edit_home_path(home.id)) %>
-
-<% end %>

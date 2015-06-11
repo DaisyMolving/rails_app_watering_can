@@ -4,13 +4,25 @@
 
 <ul>
   <li><% @plants.each do |plant|%>
-        <%= check_box_tag "home[plant_ids][]", plant.id %>
-        <%= plant.name %>
-      <%end%>
+
+  <%if(@selected.include?(plant)) %>
+    <%= check_box_tag "home[plant_ids][]", plant.id,true %><%= plant.name %>
+  <% else %>
+    <%= check_box_tag "home[plant_ids][]", plant.id%><%= plant.name %>
+  <% end %>
+
+
+  
+
+  
+
+        
+    <%end%>
   </li>
 </ul>
 
   <%= f.submit 'EDIT HOME' %>
+ 
 
  
 <% end %>
