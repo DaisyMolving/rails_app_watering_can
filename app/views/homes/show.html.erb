@@ -3,18 +3,26 @@
 <% @home.plants.each do | plant | %>
 
 
-  <div class="list-plants">
-    <ul class="plants-chosen">
-      <li class="plant_name"><%= link_to plant.name, home_plant_path(@home, plant)%>
-      </li> 
-      <li>Is it outside?
-      <%= check_box_tag "outside[#{plant.id}]", nil, plant.outside, class: 'js-outside', data: { id: plant.id } %>
-      </li>
-      <li><%= link_to('Remove From My Home', home_plant_path(@home, plant.id), method: :delete ) %></li>
-    </ul>
-  </div>
 
-
+      <div class="list-plants">
+        <ul class="plants-chosen">
+          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+              <div class="front">
+                <li class="plant_name"><%= link_to plant.name, home_plant_path(@home, plant)%>
+                </li> 
+              </div>
+              <div class="back">
+                <p class="watering-info">WATER IT THIS MUCH!</p>
+                <li>Is it outside?
+                  <%= check_box_tag "outside[#{plant.id}]", nil, plant.outside, class: 'js-outside', data: { id: plant.id } %>
+                </li>
+                <li> <%= link_to('Remove From My Home', home_plant_path(@home, plant.id), method: :delete ) %></li>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
 <% end %>
 
 
