@@ -12,7 +12,7 @@
             </li> 
           </div>
           <div class="back">
-            <p class="watering-info">WATER IT THIS MUCH!</p>
+            <p class="watering-info"><%= link_to home_plant.plant.amount_water_per_week, home_plant_path(@home, home_plant.plant)%> mLs water today</p>
             <ul>
               <li>Is it outside?
                 <%= check_box_tag "outside[#{home_plant.plant.id}]", nil, home_plant.outside, class: 'js-outside', data: { id: home_plant.plant.id, home_id: @home.id } %>
