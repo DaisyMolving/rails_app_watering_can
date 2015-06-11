@@ -1,31 +1,32 @@
 <h1>My Home</h1>
 
-<% @home.plants.each do | plant | %>
+<h2><%= @home.name %></h2>
 
-
-
-      <div class="list-plants">
-        <ul class="plants-chosen">
-          <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-            <div class="flipper">
-              <div class="front">
-                <li class="plant_name"><%= link_to plant.name, home_plant_path(@home, plant)%>
-                </li> 
-              </div>
-              <div class="back">
-                <p class="watering-info">WATER IT THIS MUCH!</p>
-                <li>Is it outside?
-                  <%= check_box_tag "outside[#{plant.id}]", nil, plant.outside, class: 'js-outside', data: { id: plant.id } %>
-                </li>
-                <li> <%= link_to('Remove From My Home', home_plant_path(@home, plant.id), method: :delete ) %></li>
-              </div>
-            </div>
+<% @home_plants.each do |home_plant| %>
+  <div class="list-plants">
+    <ul class="plants-chosen">
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <li class="plant_name"><%= link_to home_plant.plant.name, home_plant_path(@home, home_plant.plant)%>
+            </li> 
           </div>
-        </ul>
+          <div class="back">
+            <p class="watering-info">WATER IT THIS MUCH!</p>
+            <ul>
+              <li>Is it outside?
+                <%= check_box_tag "outside[#{home_plant.plant.id}]", nil, home_plant.outside, class: 'js-outside', data: { id: home_plant.plant.id, home_id: @home.id } %>
+              </li>
+              <li> <%= link_to('Remove From My Home', home_plant_path(@home, home_plant.plant.id), method: :delete ) %></li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </ul>
+  </div>
 <% end %>
 
 
-<%= link_to('Want to Add More Plants?', edit_home_path(@home.id)) %>
+<h3><%= link_to('Want to Add More Plants?', edit_home_path(@home.id)) %> </h3>
 
 

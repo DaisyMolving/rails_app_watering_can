@@ -10,6 +10,7 @@ class HomesController < ApplicationController
   def show
     @home = Home.find(params[:id])
     @homes = Home.all
+    @home_plants = HomePlant.where(home_id: @home.id)    
   end
 
   # GET
