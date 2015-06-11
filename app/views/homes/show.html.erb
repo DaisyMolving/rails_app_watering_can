@@ -1,15 +1,14 @@
 <h1>My Home</h1>
 
-<h2><%=Home.name%></h2>
-
-
 <% @home.plants.each do | plant | %>
-    <div class="list-plants">
-      <ul class="plants-chosen">
-        <li class="plant_name"><%= link_to(plant.name, plant_path(plant))%>
-        </li> 
-        <li>Is it outside? <%= check_box_tag "outside?", plant.outside = true %></li>
-        <li><%= link_to('Remove From My Home', plant_path(plant.id), method: :delete) %></li>
-      </ul>
-    </div>
-  <% end %>
+  <div class="list-plants">
+    <ul class="plants-chosen">
+      <li class="plant_name"><%= link_to plant.name, home_plant_path(@home, plant)%>
+      </li> 
+      <li>Is it outside?
+      <%= check_box_tag "outside[#{plant.id}]", nil, plant.outside, class: 'js-outside', data: { id: plant.id } %>
+      </li>
+      <li><%= link_to('Remove From My Home', home_plant_path(@home, plant.id), method: :delete ) %></li>
+    </ul>
+  </div>
+<% end %>

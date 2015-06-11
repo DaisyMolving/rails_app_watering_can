@@ -2,10 +2,14 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <% @plants.each do |plant|%>
-    <%= check_box_tag "home[plant_ids][]", plant.id %>
-    <%= plant.name %>
-  <%end%>
+<ul>
+
+  <li><% @plants.each do |plant|%>
+        <%= check_box_tag "home[plant_ids][]", plant.id %>
+        <%= plant.name %>
+      <%end%>
+  </li>
+</ul>
 
   <%= f.submit 'CREATE HOME' %>
 

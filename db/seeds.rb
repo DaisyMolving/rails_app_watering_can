@@ -5,6 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+HomePlant.delete_all
+Plant.delete_all
+Home.delete_all
+
 h1 = Home.create(name: "Daisy's House", rain_predicted: 0.9)
 
 

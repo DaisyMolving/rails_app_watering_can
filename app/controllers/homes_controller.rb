@@ -9,7 +9,7 @@ class HomesController < ApplicationController
   # this is a GET
   def show
     @home = Home.find(params[:id])
-    @plant = Plant.find(params[:id])
+    
   end
 
   # GET
@@ -45,6 +45,10 @@ class HomesController < ApplicationController
     redirect_to(homes_path)
   end
 
+  def delete_plant
+    home = Home.find(params[:id])
+    home.plants.delete(Plants.find(params[:id]))
+  end
  
  
 private
