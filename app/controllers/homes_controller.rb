@@ -9,7 +9,7 @@ class HomesController < ApplicationController
   # this is a GET
   def show
     @home = Home.find(params[:id])
-    
+    @homes = Home.all
   end
 
   # GET
@@ -28,6 +28,7 @@ class HomesController < ApplicationController
     # GET
   def edit
     @home = Home.find(params[:id])
+    @plants = Plant.all
   end
 
     # PUT
