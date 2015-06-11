@@ -36,7 +36,7 @@ class HomesController < ApplicationController
   def update
     @home = Home.find(params[:id])
     @home.update(home_params)
-    redirect_to(homes_path)
+    redirect_to(home_path)
   end
 
 
