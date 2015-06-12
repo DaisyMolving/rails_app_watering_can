@@ -3,14 +3,17 @@
   <%= f.text_field :name %>
 
 
-
+    
       <ul>
+       <div id="container-2">
         <li ><% @plants.each do |plant|%>
         <%= check_box_tag "home[plant_ids][]", plant.id %>
           <p class="plants-list"> <%= plant.name %> </p>
         <%end%>
         </li>
+         </div>>
       </ul>
+    
 
 
   <%= f.submit 'CREATE HOME' %>

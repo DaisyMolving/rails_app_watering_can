@@ -1,6 +1,8 @@
-<h1>Welcome to Watering Can</h1>
+<h1>Welcome to</h1>
+<h4>WATERING CAN!</h4>
 
-<%= link_to 'Add a home', new_home_path %>
+<div class="index-info">
+<%= link_to 'Add Your Home...', new_home_path %>
 
 
   <% @homes.each do | home | %>
@@ -10,6 +12,8 @@
 
         <li><%= link_to('EDIT', edit_home_path(home.id)) %></li> 
         <li><%= link_to('DELETE', home_path(home.id), method: :delete) %></li>
+      </ul>
     </div>
+</div>    
   <% end %>
 
